@@ -1,16 +1,32 @@
 
-public class Funcionario {
+public class FuncionarioTeste {
 
 	private String nome;
 	private String cpf;
 	private double salario;
+	private int tipo = 0; // 0 = Funcionário 1 = gerente 2 = diretor
 
-	public Funcionario() {
+	public FuncionarioTeste() {
 
 	}
 
 	public double getBonificacao() {
-		return this.salario * 0.1;
+
+		if (this.tipo == 0) {
+			return this.salario * 0.1;
+		} else if (this.tipo == 1) {
+			return this.salario;
+		} else {
+			return this.salario + 1000.00;
+		}
+	}
+
+	public int getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
 	}
 
 	public String getNome() {
